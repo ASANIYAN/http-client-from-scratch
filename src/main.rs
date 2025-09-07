@@ -137,22 +137,22 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Test successful request
     println!("=== Successful GET ===");
     match get("httpbin.org", "/get", None) {
-        Ok(response) => println!("✅ Status: {} (Code: {})", response.status_line, response.status_code),
-        Err(e) => println!("❌ Error: {}", e),
+        Ok(response) => println!("Status: {} (Code: {})", response.status_line, response.status_code),
+        Err(e) => println!("Error: {}", e),
     }
     
-    Test 404 error
+    // Test 404 error
     println!("\n=== Testing 404 Error ===");
     match get("httpbin.org", "/nonexistent", None) {
-        Ok(response) => println!("✅ Status: {}", response.status_line),
-        Err(e) => println!("❌ Expected error: {}", e),
+        Ok(response) => println!("Status: {}", response.status_line),
+        Err(e) => println!("Expected error: {}", e),
     }
-    
-    Test network error
+
+    // Test network error
     println!("\n=== Testing Network Error ===");
     match get("nonexistent-host-12345.com", "/", None) {
-        Ok(response) => println!("✅ Status: {}", response.status_line),
-        Err(e) => println!("❌ Expected error: {}", e),
+        Ok(response) => println!("Status: {}", response.status_line),
+        Err(e) => println!("Expected error: {}", e),
     }
 
     test_api()?;
