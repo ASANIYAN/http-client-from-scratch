@@ -1,0 +1,9 @@
+[package]
+name = "http-client-from-scratch-rust"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+
+# Add your dependencies here, for example:
+# reqwest = "0.11"
